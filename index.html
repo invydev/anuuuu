@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loukys Store - Redfinger Cloud Code</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-cloud"></i>
+                <h1>Loukys <span class="highlight">Store</span></h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="#products" class="nav-link"><i class="fas fa-gamepad"></i> Products</a>
+                <a href="#history" class="nav-link"><i class="fas fa-history"></i> History</a>
+                <a href="#admin" class="nav-link admin-only"><i class="fas fa-cogs"></i> Admin</a>
+            </div>
+            <div class="user-info">
+                <span id="user-id">Guest</span>
+                <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-title">Redfinger Cloud Gaming</h2>
+                    <p class="hero-subtitle">Akses game PC/Android premium dengan cloud gaming terbaik</p>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3 id="total-users">0</h3>
+                                <p>Total Users</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div>
+                                <h3 id="total-sales">0</h3>
+                                <p>Total Sales</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h3 id="online-now">0</h3>
+                                <p>Online Now</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://foto-to-url.gt.tc/uploads/img_69427a290b0948.28796475.jpg" alt="Redfinger Cloud">
+                </div>
+            </div>
+
+            <!-- Product Cards -->
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-store"></i> Our Products</h2>
+                <p>Pilih paket Redfinger Cloud yang sesuai kebutuhan Anda</p>
+            </div>
+            <div class="products-grid detailed">
+                <!-- Detailed products -->
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Purchase History</h2>
+                <p>Riwayat pembelian Anda</p>
+            </div>
+            <div class="history-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>ID Transaksi</th>
+                            <th>Produk</th>
+                            <th>Kode</th>
+                            <th>Harga</th>
+                            <th>Tanggal</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- History will be loaded dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="section admin-only">
+            <div class="section-header">
+                <h2><i class="fas fa-cogs"></i> Admin Panel</h2>
+                <p>Kelola stok dan monitor transaksi</p>
+            </div>
+            
+            <div class="admin-grid">
+                <!-- Stock Management -->
+                <div class="admin-card">
+                    <h3><i class="fas fa-boxes"></i> Stock Management</h3>
+                    <div class="stock-controls">
+                        <div class="form-group">
+                            <label for="product-select">Pilih Produk:</label>
+                            <select id="product-select" class="form-control">
+                                <option value="VIP7D">VIP 7 Hari</option>
+                                <option value="VIP30D">VIP 30 Hari</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="stock-action">Aksi:</label>
+                            <select id="stock-action" class="form-control">
+                                <option value="add">Tambah Stock</option>
+                                <option value="view">Lihat Stock</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="codes-input">Kode (pisah dengan koma):</label>
+                            <textarea id="codes-input" class="form-control" rows="4" placeholder="code1,code2,code3,..."></textarea>
+                        </div>
+                        <button id="stock-submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Proses
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Price Management -->
+                <div class="admin-card">
+                    <h3><i class="fas fa-tags"></i> Price Management</h3>
+                    <div class="price-controls">
+                        <div class="form-group">
+                            <label for="price-product">Produk:</label>
+                            <select id="price-product" class="form-control">
+                                <option value="VIP7D">VIP 7 Hari</option>
+                                <option value="VIP30D">VIP 30 Hari</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-price">Harga Baru (Rp):</label>
+                            <input type="number" id="new-price" class="form-control" min="1000">
+                        </div>
+                        <button id="update-price" class="btn btn-success">
+                            <i class="fas fa-sync-alt"></i> Update Harga
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Transaction Monitor -->
+                <div class="admin-card">
+                    <h3><i class="fas fa-chart-line"></i> Transaction Monitor</h3>
+                    <div class="stats-display">
+                        <div class="stat-item">
+                            <span class="stat-label">VIP7D Stock:</span>
+                            <span class="stat-value" id="admin-vip7d-stock">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">VIP30D Stock:</span>
+                            <span class="stat-value" id="admin-vip30d-stock">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Pending Payments:</span>
+                            <span class="stat-value" id="pending-payments">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Today Sales:</span>
+                            <span class="stat-value" id="today-sales">0</span>
+                        </div>
+                    </div>
+                    <button id="refresh-stats" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Refresh
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Payment Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="payment-info">
+                    <!-- Payment info will be loaded here -->
+                </div>
+                <div id="qrcode-container">
+                    <!-- QR Code will be loaded here -->
+                </div>
+                <div class="payment-actions">
+                    <button id="check-status" class="btn btn-success">
+                        <i class="fas fa-check-circle"></i> Check Payment Status
+                    </button>
+                    <button id="cancel-payment" class="btn btn-danger">
+                        <i class="fas fa-times-circle"></i> Cancel Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Memproses...</p>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+          </html>
