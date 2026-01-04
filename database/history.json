@@ -1,0 +1,35 @@
+[
+  {
+    "id": "TX20240115001",
+    "userId": "user_1705309200_abc123",
+    "product": "VIP7D",
+    "code": "RF7D-ABC123-XYZ789",
+    "price": 19000,
+    "date": "2024-01-15T10:15:30Z",
+    "status": "success",
+    "payment_method": "QRIS",
+    "transaction_id": "QRIS123456789"
+  },
+  {
+    "id": "TX20240114001",
+    "userId": "user_1705222800_def456",
+    "product": "VIP30D",
+    "code": "RF30D-123ABC-789XYZ",
+    "price": 59000,
+    "date": "2024-01-14T14:20:45Z",
+    "status": "success",
+    "payment_method": "QRIS",
+    "transaction_id": "QRIS987654321"
+  },
+  {
+    "id": "TX20240113001",
+    "userId": "user_1705136400_ghi789",
+    "product": "VIP7D",
+    "code": "RF7D-DEF456-UVW123",
+    "price": 19000,
+    "date": "2024-01-13T09:45:15Z",
+    "status": "success",
+    "payment_method": "QRIS",
+    "transaction_id": "QRIS456789123"
+  }
+]
