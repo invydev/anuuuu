@@ -1,0 +1,35 @@
+{
+  "stock": {
+    "VIP7D": [
+      "RF7D-ABC123-XYZ789",
+      "RF7D-DEF456-UVW123",
+      "RF7D-GHI789-RST456",
+      "RF7D-JKL012-OPQ789",
+      "RF7D-MNO345-LMN012",
+      "RF7D-PQR678-IJK345",
+      "RF7D-STU901-FGH678",
+      "RF7D-VWX234-DEF901",
+      "RF7D-YZA567-ABC234",
+      "RF7D-BCD890-XYZ567"
+    ],
+    "VIP30D": [
+      "RF30D-123ABC-789XYZ",
+      "RF30D-456DEF-123UVW",
+      "RF30D-789GHI-456RST",
+      "RF30D-012JKL-789OPQ",
+      "RF30D-345MNO-012LMN",
+      "RF30D-678PQR-345IJK",
+      "RF30D-901STU-678FGH",
+      "RF30D-234VWX-901DEF",
+      "RF30D-567YZA-234ABC",
+      "RF30D-890BCD-567XYZ"
+    ]
+  },
+  "prices": {
+    "VIP7D": 19000,
+    "VIP30D": 59000
+  },
+  "last_updated": "2024-01-15T10:30:00Z",
+  "total_codes": 20,
+  "low_stock_threshold": 5
+}
